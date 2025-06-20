@@ -139,6 +139,68 @@ document.querySelectorAll('.contact-item span').forEach(item => {
     }
 });
 
+// Modal functionality
+function openQuoteModal() {
+    const modal = document.getElementById('quoteModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeQuoteModal() {
+    const modal = document.getElementById('quoteModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside of it
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('quoteModal');
+    if (event.target === modal) {
+        closeQuoteModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeQuoteModal();
+    }
+});
+
+// Modal form validation
+const quoteForm = document.querySelector('.quote-form');
+if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+        const name = document.getElementById('modal-name').value.trim();
+        const phone = document.getElementById('modal-phone').value.trim();
+        const email = document.getElementById('modal-email').value.trim();
+        const service = document.getElementById('modal-service').value;
+        
+        // Basic validation
+        if (!name || !phone || !email || !service) {
+            e.preventDefault();
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Phone validation (basic)
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
+            e.preventDefault();
+            alert('Please enter a valid phone number.');
+            return;
+        }
+    });
+}
+
 // Preload critical images and optimize performance
 window.addEventListener('load', () => {
     // Add any additional performance optimizations here
