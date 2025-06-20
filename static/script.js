@@ -1,0 +1,146 @@
+// Mobile Navigation Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Header background opacity on scroll
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(0, 0, 0, 0.98)';
+    } else {
+        header.style.background = 'rgba(0, 0, 0, 0.95)';
+    }
+});
+
+// Form validation
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const service = document.getElementById('service').value;
+        
+        // Basic validation
+        if (!name || !phone || !email || !service) {
+            e.preventDefault();
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Phone validation (basic)
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
+            e.preventDefault();
+            alert('Please enter a valid phone number.');
+            return;
+        }
+    });
+}
+
+// Service card hover effects
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 20px 40px rgba(255, 215, 0, 0.1)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+    });
+});
+
+// Scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for scroll animations
+document.querySelectorAll('.service-card, .welcome-text, .contact-form').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// Auto-hide flash messages
+setTimeout(() => {
+    const flashMessages = document.querySelector('.flash-messages');
+    if (flashMessages) {
+        flashMessages.style.transition = 'opacity 0.5s ease';
+        flashMessages.style.opacity = '0';
+        setTimeout(() => {
+            flashMessages.style.display = 'none';
+        }, 500);
+    }
+}, 5000);
+
+// Phone number click to call
+document.querySelectorAll('.phone-number').forEach(phone => {
+    phone.style.cursor = 'pointer';
+    phone.addEventListener('click', () => {
+        window.location.href = 'tel:' + phone.textContent.replace(/\D/g, '');
+    });
+});
+
+// Email click to open email client
+document.querySelectorAll('.contact-item span').forEach(item => {
+    if (item.textContent.includes('@')) {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => {
+            window.location.href = 'mailto:' + item.textContent;
+        });
+    }
+});
+
+// Preload critical images and optimize performance
+window.addEventListener('load', () => {
+    // Add any additional performance optimizations here
+    console.log('Details by Design website loaded successfully');
+});
