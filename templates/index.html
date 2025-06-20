@@ -107,12 +107,7 @@
         <div class="container">
             <div class="welcome-content">
                 <div class="welcome-image">
-                    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="600" height="400" fill="#222"/>
-                        <rect x="50" y="100" width="500" height="200" rx="20" fill="#ffd700" opacity="0.1"/>
-                        <circle cx="300" cy="200" r="80" fill="#ffd700" opacity="0.3"/>
-                        <text x="300" y="210" text-anchor="middle" fill="#ffd700" font-family="Inter" font-weight="bold" font-size="24">DETAIL</text>
-                    </svg>
+                    <img src="{{ url_for('static', filename='car-detail-close.jpg') }}" alt="Professional Car Detailing Close-up" class="about-image">
                 </div>
                 <div class="welcome-text">
                     <span class="section-subtitle">WELCOME TO DETAILS BY DESIGN</span>
@@ -219,10 +214,15 @@
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
-                <blockquote>
-                    Details by Design transformed my vehicle beyond my expectations. Their attention to detail and professional service is unmatched in Missoula. I wouldn't trust my car to anyone else.
-                </blockquote>
-                <cite>- Satisfied Customer</cite>
+                <div class="testimonial-image">
+                    <img src="{{ url_for('static', filename='wheel-cleaning.jpg') }}" alt="Professional Wheel Cleaning Service" class="testimonial-photo">
+                </div>
+                <div class="testimonial-text">
+                    <blockquote>
+                        Details by Design transformed my vehicle beyond my expectations. Their attention to detail and professional service is unmatched in Missoula. I wouldn't trust my car to anyone else.
+                    </blockquote>
+                    <cite>- Satisfied Customer</cite>
+                </div>
             </div>
         </div>
     </section>
