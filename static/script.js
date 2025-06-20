@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Form validation
+// Form validation and submission handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -51,7 +51,7 @@ if (contactForm) {
         // Basic validation
         if (!name || !phone || !email || !service) {
             e.preventDefault();
-            alert('Please fill in all required fields.');
+            showMessage('Please fill in all required fields.', 'error');
             return;
         }
         
@@ -59,7 +59,7 @@ if (contactForm) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             e.preventDefault();
-            alert('Please enter a valid email address.');
+            showMessage('Please enter a valid email address.', 'error');
             return;
         }
         
@@ -67,9 +67,15 @@ if (contactForm) {
         const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
         if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
             e.preventDefault();
-            alert('Please enter a valid phone number.');
+            showMessage('Please enter a valid phone number.', 'error');
             return;
         }
+        
+        // For static deployment, show success message
+        // In production, you would integrate with Formspree or AWS SES
+        e.preventDefault();
+        showMessage('Thank you for your message! We will contact you soon.', 'success');
+        contactForm.reset();
     });
 }
 
@@ -167,6 +173,33 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Message display function
+function showMessage(message, type) {
+    const flashContainer = document.getElementById('flash-messages');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    
+    // Hide all messages first
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    // Show appropriate message
+    if (type === 'success') {
+        successMessage.textContent = message;
+        successMessage.style.display = 'block';
+    } else {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+    }
+    
+    flashContainer.style.display = 'block';
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+        flashContainer.style.display = 'none';
+    }, 5000);
+}
+
 // Modal form validation
 const quoteForm = document.querySelector('.quote-form');
 if (quoteForm) {
@@ -198,6 +231,12 @@ if (quoteForm) {
             alert('Please enter a valid phone number.');
             return;
         }
+        
+        // For static deployment, show success and close modal
+        e.preventDefault();
+        alert('Thank you for your quote request! We will contact you soon.');
+        closeQuoteModal();
+        quoteForm.reset();
     });
 }
 

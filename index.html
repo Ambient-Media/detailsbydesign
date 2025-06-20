@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details by Design - Premium Auto Detailing Missoula MT</title>
+    <meta name="description" content="Professional auto detailing services in Missoula, Montana. Offering auto detailing, electrostatic sanitizing, windshield replacement, rock chip repair, and diagnostic code reading.">
+    
+    <!-- SEO and Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Details by Design",
+        "description": "Professional auto detailing services in Missoula, Montana",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Missoula",
+            "addressRegion": "MT",
+            "addressCountry": "US"
+        },
+        "telephone": "(406) 240-2675",
+        "email": "Detailsbydesign18@gmail.com",
+        "openingHours": [
+            "Mo-Th 09:00-18:00",
+            "Fr 09:00-17:00"
+        ],
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "46.8721",
+                "longitude": "-113.9940"
+            }
+        }
+    }
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>DETAILS BY DESIGN</h2>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <div class="nav-contact">
+                    <span class="phone-number">(406) 240-2675</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">PREMIUM AUTO DETAILING IN MISSOULA</h1>
+                <p class="hero-subtitle">Professional car care that brings out your vehicle's best with meticulous attention to detail and premium service.</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>PREMIUM QUALITY</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>LOCAL SERVICE</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>RELIABLE</span>
+                    </div>
+                </div>
+                <button class="cta-btn" onclick="openQuoteModal()">REQUEST A QUOTE</button>
+            </div>
+            <div class="hero-image">
+                <img src="static/hero-car.jpg" alt="Premium Auto Detailing" class="hero-car-photo">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="welcome-section">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="welcome-image">
+                    <img src="static/car-detail-close.jpg" alt="Professional Car Detailing Close-up" class="about-image">
+                </div>
+                <div class="welcome-text">
+                    <span class="section-subtitle">WELCOME TO DETAILS BY DESIGN</span>
+                    <h2>CRAFTING PERFECTION IN CAR DETAILING</h2>
+                    <p>We are committed to delivering exceptional automotive care services that exceed expectations. Our team combines years of experience with premium products and meticulous attention to detail.</p>
+                    <p>Located in the heart of Missoula, Montana, we pride ourselves on being the trusted choice for discerning vehicle owners who demand nothing but the best for their automobiles.</p>
+                    <p>Every service we provide is backed by our commitment to quality, reliability, and customer satisfaction.</p>
+                    <button class="learn-more-btn" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">LEARN MORE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-subtitle">OUR SERVICES</span>
+                <h2>A FULL RANGE OF PREMIUM DETAILING SERVICES</h2>
+                <button class="explore-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">EXPLORE ALL</button>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#1a1a1a"/>
+                            <rect x="50" y="100" width="300" height="100" rx="50" fill="#ffd700" opacity="0.2"/>
+                            <circle cx="200" cy="150" r="40" fill="#ffd700" opacity="0.4"/>
+                            <path d="M180 130 Q200 110 220 130 Q200 170 180 130" fill="#ffd700"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>AUTO DETAILING</h3>
+                        <p>Complete interior and exterior detailing services that restore your vehicle's showroom shine. We use premium products and proven techniques to deliver exceptional results.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#1a1a1a"/>
+                            <circle cx="200" cy="150" r="60" fill="#ffd700" opacity="0.2"/>
+                            <path d="M170 150 L190 130 L210 150 L230 130" stroke="#ffd700" stroke-width="3" fill="none"/>
+                            <circle cx="200" cy="150" r="20" fill="#ffd700" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>ELECTROSTATIC SANITIZING</h3>
+                        <p>Advanced sanitization technology that eliminates 99.9% of germs and bacteria. Perfect for maintaining a clean and healthy vehicle environment.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#1a1a1a"/>
+                            <rect x="100" y="100" width="200" height="100" rx="10" fill="#ffd700" opacity="0.3"/>
+                            <rect x="120" y="120" width="160" height="60" fill="#ffd700" opacity="0.1"/>
+                            <circle cx="200" cy="150" r="5" fill="#ffd700"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>WINDSHIELD REPLACEMENT</h3>
+                        <p>Professional windshield replacement services using high-quality glass and expert installation techniques. Safety and clarity you can trust.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#1a1a1a"/>
+                            <rect x="150" y="100" width="100" height="100" rx="5" fill="#ffd700" opacity="0.3"/>
+                            <circle cx="200" cy="120" r="8" fill="#ffd700"/>
+                            <path d="M190 140 Q200 160 210 140" stroke="#ffd700" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>ROCK CHIP REPAIR</h3>
+                        <p>Expert repair services for windshield rock chips and small cracks. Quick, effective solutions that prevent further damage and maintain structural integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card large-card">
+                    <div class="service-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#1a1a1a"/>
+                            <rect x="100" y="80" width="200" height="140" rx="15" fill="#ffd700" opacity="0.2"/>
+                            <rect x="120" y="100" width="160" height="20" fill="#ffd700" opacity="0.4"/>
+                            <rect x="120" y="130" width="160" height="20" fill="#ffd700" opacity="0.3"/>
+                            <rect x="120" y="160" width="160" height="20" fill="#ffd700" opacity="0.2"/>
+                            <rect x="120" y="190" width="160" height="20" fill="#ffd700" opacity="0.1"/>
+                        </svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>DIAGNOSTIC CODE READING</h3>
+                        <p>Professional diagnostic services to identify and troubleshoot vehicle issues. Our advanced equipment helps detect problems early, saving you time and money on repairs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-header">
+                <span class="section-subtitle">CLIENT TESTIMONIALS</span>
+                <h2>WHAT OUR CUSTOMERS SAY</h2>
+            </div>
+            <div class="reviews-content">
+                <div class="reviews-image">
+                    <img src="static/wheel-cleaning.jpg" alt="Professional Wheel Cleaning Service" class="reviews-photo">
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Richie was so very kind to accommodate us, getting us in quickly, keeping us updated during the day and with any questions, changes, preferences needed. He went above and beyond and I would recommend Attention 2 Detail to anyone needing there vehicle given new life or ready to sell! Thank you again Richie!"
+                        </blockquote>
+                        <cite>- M Grayson</cite>
+                        <span class="review-date">9 months ago</span>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "The interior of my new-to-me Impreza had a terrible smell when I got it. This crew made the inside of this car look brand new and they completely eliminated the smell. Excellent work and attention to detail."
+                        </blockquote>
+                        <cite>- Paige Pavalone</cite>
+                        <span class="review-date">2 months ago</span>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "I can't believe how quick they were at responding. Prompt. The cleanest my car has ever been! Like brand new!! I would highly recommend them! Friendly and professional. Fair priced. Absolutely zero complaints! Will be returning again and again!"
+                        </blockquote>
+                        <cite>- Leah Komlofske</cite>
+                        <span class="review-date">4 months ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>ARE YOU CURIOUS ABOUT THE POSSIBILITIES FOR YOUR CAR?</h2>
+                
+                <!-- Flash Messages Placeholder -->
+                <div id="flash-messages" class="flash-messages" style="display: none;">
+                    <div id="success-message" class="alert alert-success" role="alert" style="display: none;">
+                        Thank you for your message! We will contact you soon.
+                    </div>
+                    <div id="error-message" class="alert alert-danger" role="alert" style="display: none;">
+                        Please fill in all required fields.
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="contact-info">
+                        <h3>GET IN TOUCH</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Missoula, MT</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(406) 240-2675</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Detailsbydesign18@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div class="hours">
+                                    <div>Mon-Thu: 9:00 AM - 6:00 PM</div>
+                                    <div>Friday: 9:00 AM - 5:00 PM</div>
+                                    <div>Weekends: Closed</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Embedded Google Maps -->
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89326.72051042654!2d-114.0680647!3d46.8721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x535dcc33f19815cb%3A0x9c296b1c4209bd0!2sMissoula%2C%20MT!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Full Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email Address *" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="service" name="service" required>
+                                    <option value="">Select Service *</option>
+                                    <option value="Auto Detailing">Auto Detailing</option>
+                                    <option value="Electrostatic Sanitizing">Electrostatic Sanitizing</option>
+                                    <option value="Windshield Replacement">Windshield Replacement</option>
+                                    <option value="Rock Chip Repair">Rock Chip Repair</option>
+                                    <option value="Diagnostic Code Reading">Diagnostic Code Reading</option>
+                                    <option value="Multiple Services">Multiple Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Tell us about your vehicle and what you need..." rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>DETAILS BY DESIGN</h3>
+                    <p>Premium auto detailing services in Missoula, Montana. Your vehicle deserves the best care.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p>(406) 240-2675</p>
+                    <p>Detailsbydesign18@gmail.com</p>
+                    <p>Missoula, MT</p>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Auto Detailing</li>
+                        <li>Electrostatic Sanitizing</li>
+                        <li>Windshield Replacement</li>
+                        <li>Rock Chip Repair</li>
+                        <li>Diagnostic Code Reading</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Details by Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>REQUEST A QUOTE</h3>
+                <span class="modal-close" onclick="closeQuoteModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="quote-form" class="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="modal-name" name="name" placeholder="Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="modal-phone" name="phone" placeholder="Phone Number *" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="modal-email" name="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="modal-service" name="service" required>
+                                <option value="">Select Service *</option>
+                                <option value="Auto Detailing">Auto Detailing</option>
+                                <option value="Electrostatic Sanitizing">Electrostatic Sanitizing</option>
+                                <option value="Windshield Replacement">Windshield Replacement</option>
+                                <option value="Rock Chip Repair">Rock Chip Repair</option>
+                                <option value="Diagnostic Code Reading">Diagnostic Code Reading</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="modal-message" name="message" placeholder="Tell us about your vehicle and what you need..." rows="4"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeQuoteModal()">CANCEL</button>
+                        <button type="submit" class="btn-primary">SEND QUOTE REQUEST</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="static/script.js"></script>
+</body>
+</html>
