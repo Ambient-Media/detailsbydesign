@@ -41,9 +41,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .nav-logo h2 {
+    font-family: 'Quicksand', sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -177,11 +179,13 @@ body {
     align-items: center;
 }
 
-.hero-car-silhouette svg {
+.hero-car-photo {
     width: 100%;
     height: auto;
     max-width: 600px;
+    border-radius: 10px;
     filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
+    object-fit: cover;
 }
 
 .scroll-indicator {
@@ -584,6 +588,183 @@ body {
 .footer-bottom p {
     color: #888888;
     font-size: 0.8rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #111111;
+    margin: 5% auto;
+    padding: 0;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffd700;
+    letter-spacing: 2px;
+}
+
+.modal-close {
+    color: #cccccc;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #ffd700;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.quote-form .form-group input,
+.quote-form .form-group select,
+.quote-form .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #000000;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.quote-form .form-group input:focus,
+.quote-form .form-group select:focus,
+.quote-form .form-group textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+.quote-form .form-group input::placeholder,
+.quote-form .form-group textarea::placeholder {
+    color: #888888;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #000000;
+    padding: 12px 25px;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #cccccc;
+    border: 1px solid #cccccc;
+    padding: 12px 25px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background: #cccccc;
+    color: #000000;
+}
+
+/* Modal Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
 }
 
 /* Mobile Responsive */

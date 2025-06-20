@@ -41,7 +41,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -91,24 +91,10 @@
                         <span>RELIABLE</span>
                     </div>
                 </div>
-                <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">GET YOUR QUOTE TODAY</button>
+                <button class="cta-btn" onclick="openQuoteModal()">REQUEST A QUOTE</button>
             </div>
             <div class="hero-image">
-                <div class="hero-car-silhouette">
-                    <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#ffa500;stop-opacity:0.6" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M100 250 Q150 200 250 200 L550 200 Q650 200 700 250 L700 300 Q680 320 650 320 L150 320 Q120 320 100 300 Z" fill="url(#carGradient)" opacity="0.8"/>
-                        <circle cx="200" cy="320" r="25" fill="#333" opacity="0.9"/>
-                        <circle cx="600" cy="320" r="25" fill="#333" opacity="0.9"/>
-                        <circle cx="200" cy="320" r="15" fill="#ffd700"/>
-                        <circle cx="600" cy="320" r="15" fill="#ffd700"/>
-                    </svg>
-                </div>
+                <img src="{{ url_for('static', filename='hero-car.jpg') }}" alt="Premium Auto Detailing" class="hero-car-photo">
             </div>
         </div>
         <div class="scroll-indicator">
@@ -360,6 +346,51 @@
             </div>
         </div>
     </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>REQUEST A QUOTE</h3>
+                <span class="modal-close" onclick="closeQuoteModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url_for('contact') }}" method="POST" class="quote-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="modal-name" name="name" placeholder="Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="modal-phone" name="phone" placeholder="Phone Number *" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="modal-email" name="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="modal-service" name="service" required>
+                                <option value="">Select Service *</option>
+                                <option value="Auto Detailing">Auto Detailing</option>
+                                <option value="Electrostatic Sanitizing">Electrostatic Sanitizing</option>
+                                <option value="Windshield Replacement">Windshield Replacement</option>
+                                <option value="Rock Chip Repair">Rock Chip Repair</option>
+                                <option value="Diagnostic Code Reading">Diagnostic Code Reading</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="modal-message" name="message" placeholder="Tell us about your vehicle and what you need..." rows="4"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeQuoteModal()">CANCEL</button>
+                        <button type="submit" class="btn-primary">SEND QUOTE REQUEST</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
