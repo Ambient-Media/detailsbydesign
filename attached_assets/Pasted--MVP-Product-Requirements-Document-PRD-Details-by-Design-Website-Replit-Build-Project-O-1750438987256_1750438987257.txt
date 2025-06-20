@@ -1,0 +1,175 @@
+# MVP Product Requirements Document (PRD)
+## Details by Design Website - Replit Build
+
+### Project Overview
+
+Build a single-page website for Details by Design, an auto detailing business in Missoula, Montana, using Replit. The site will emulate the dark theme with gold accents from the Lustro reference design while showcasing the company's five core services.
+
+### Business Information
+- **Company:** Details by Design
+- **Location:** Missoula, MT
+- **Phone:** (406) 240-2675
+- **Email:** Detailsbydesign18@gmail.com
+- **Hours:** Mon-Thu: 9:00 AM - 6:00 PM, Fri: 9:00 AM - 5:00 PM, Weekends: Closed
+
+### Services Offered
+- Auto Detailing
+- Electrostatic Sanitizing
+- Windshield Replacement
+- Rock Chip Repair
+- Diagnostic Code Reading
+
+### MVP Technical Requirements
+
+#### **Development Stack**
+- **Platform:** Replit hosting and development
+- **Frontend:** HTML5, CSS3, Vanilla JavaScript
+- **Libraries:** Bootstrap 5 (via CDN) for responsive grid
+- **Structure:** Single HTML file with embedded CSS and JavaScript
+
+#### **Design Specifications**
+- **Color Scheme:** Dark background (#1a1a1a) with gold/yellow accents (#FFD700)
+- **Typography:** Modern sans-serif fonts (Google Fonts via CDN)
+- **Layout:** Mobile-first responsive design using CSS Grid and Flexbox
+- **Theme:** Premium automotive aesthetic inspired by Lustro design
+
+### MVP Page Sections
+
+#### **1. Header/Navigation**
+- Company logo/name
+- Simple navigation menu (Home, Services, About, Contact)
+- Phone number prominently displayed
+
+#### **2. Hero Section**
+- Bold headline: "Premium Auto Detailing in Missoula"
+- Subheading highlighting quality and local service
+- Primary CTA button: "Get Quote"
+- Background: Dark with subtle automotive imagery
+
+#### **3. Services Grid**
+- Five service cards in responsive grid layout
+- Each card includes:
+  - Service name
+  - Brief description (2-3 sentences)
+  - Icon or small image
+  - Gold accent styling
+
+#### **4. About Section**
+- Brief company introduction (3-4 sentences)
+- Focus on quality, experience, and local service
+- Professional tone emphasizing attention to detail
+
+#### **5. Contact Section**
+- Contact form with fields:
+  - Name (required)
+  - Phone (required)
+  - Email (required)
+  - Service Interest (dropdown)
+  - Message (optional)
+- Business information:
+  - Address: Missoula, MT
+  - Phone: (406) 240-2675
+  - Email: Detailsbydesign18@gmail.com
+  - Business hours
+- Embedded Google Maps (optional if easy to implement)
+
+#### **6. Footer**
+- Copyright information
+- Contact details
+- Social media placeholders (if applicable)
+
+### Content Requirements
+
+#### **Headlines & Copy**
+- **Main Headline:** "Premium Auto Detailing Services in Missoula"
+- **Subheading:** "Professional car care that brings out your vehicle's best"
+- **About Text:** Brief paragraph about commitment to quality and customer satisfaction
+- **Service Descriptions:** 2-3 sentences per service explaining benefits
+
+#### **Call-to-Actions**
+- Primary: "Get Your Quote Today"
+- Secondary: "Call Now: (406) 240-2675"
+- Form: "Request Service Quote"
+
+### Technical Implementation
+
+#### **Performance Requirements**
+- Page load time under 3 seconds
+- Mobile-responsive across all devices
+- Optimized images (WebP format when possible)
+- Minimal external dependencies
+
+#### **SEO Basics**
+- Semantic HTML5 structure
+- Meta title: "Details by Design - Auto Detailing Missoula MT"
+- Meta description including services and location
+- Alt text for all images
+- Local business schema markup
+
+#### **Form Functionality**
+- Client-side validation
+- Form submission handling (can use Formspree or similar free service)
+- Success/error message display
+- Required field validation
+
+### Design Elements
+
+#### **Visual Components**
+- Dark theme with gold accent colors matching Lustro aesthetic
+- Clean, modern typography hierarchy
+- Subtle hover effects on buttons and cards
+- Professional spacing and layout
+- Mobile hamburger menu for navigation
+
+#### **Interactive Features**
+- Smooth scrolling navigation
+- Form validation feedback
+- Hover effects on service cards
+- Responsive navigation menu
+
+### Deliverables
+
+#### **Single Replit Project Containing:**
+1. `index.html` - Complete webpage structure
+2. Embedded CSS styling within `` tags
+3. Embedded JavaScript within `` tags
+4. Optimized for immediate deployment
+
+#### **Key Features:**
+- Fully responsive design
+- Contact form with validation
+- Professional automotive styling
+- Local SEO optimization
+- Fast loading performance
+
+### Success Criteria
+
+- **Functionality:** All sections display correctly on desktop and mobile
+- **Design:** Matches Lustro-inspired dark theme with gold accents
+- **Performance:** Loads in under 3 seconds
+- **Contact:** Form submits successfully and validates input
+- **SEO:** Proper meta tags and semantic structure implemented
+- **Responsive:** Works seamlessly on phones, tablets, and desktops
+
+### Content Priorities
+
+#### **Must-Have Content:**
+- All five services clearly listed and described
+- Contact information prominently displayed
+- Professional company description
+- Working contact form
+- Business hours and location
+
+#### **Design Priorities:**
+- Dark theme with gold accents
+- Clean, professional automotive aesthetic
+- Easy-to-read typography
+- Clear service differentiation
+- Prominent contact options
+
+This MVP focuses on creating a professional, functional website that establishes Details by Design's online presence, showcases their services, and facilitates customer contact - all within a single, well-designed page that can be built efficiently on Replit.
+
+[1] https://pplx-res.cloudinary.com/image/private/user_uploads/616985/65f7d508-f756-433d-9b44-a58dee78a71d/original-895cb7ad39be835ac7b8eb7736134bb9.jpg
+[2] https://pplx-res.cloudinary.com/image/private/user_uploads/616985/856e66dd-8262-46ab-9587-fa87d21d4169/Screenshot-2025-06-20-at-10.42.56-AM.jpg
+[3] https://pplx-res.cloudinary.com/image/private/user_uploads/616985/76e94fa7-bd24-49a1-8fa6-41fde8529a28/Screenshot-2025-06-20-at-10.43.58-AM.jpg
+[4] https://pplx-res.cloudinary.com/image/private/user_uploads/616985/7e159152-1299-4607-926c-d3663d60b983/Screenshot-2025-06-20-at-10.46.09-AM.jpg
