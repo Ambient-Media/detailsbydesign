@@ -372,58 +372,97 @@ body {
     line-height: 1.6;
 }
 
-/* Testimonial Section */
-.testimonial-section {
+/* Reviews Section */
+.reviews-section {
     padding: 120px 0;
     background: #111111;
 }
 
-.testimonial-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+.reviews-header {
+    text-align: center;
+    margin-bottom: 80px;
 }
 
-.testimonial-image {
+.reviews-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.reviews-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.reviews-image {
     position: relative;
 }
 
-.testimonial-photo {
+.reviews-photo {
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     border-radius: 10px;
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.2));
 }
 
-.testimonial-text {
-    text-align: left;
+.reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.testimonial-text blockquote {
-    font-size: 1.2rem;
+.review-card {
+    background: #000000;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.review-stars i {
+    color: #ffd700;
+    font-size: 16px;
+}
+
+.review-card blockquote {
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.8;
+    line-height: 1.6;
     color: #ffffff;
     font-style: italic;
-    position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 0;
 }
 
-.testimonial-text blockquote::before,
-.testimonial-text blockquote::after {
-    content: '"';
-    font-size: 3rem;
-    color: #ffd700;
-    font-weight: bold;
-}
-
-.testimonial-text cite {
+.review-card cite {
     color: #ffd700;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
+    font-style: normal;
+}
+
+.review-date {
+    color: #888888;
+    font-size: 0.8rem;
+    margin-left: 10px;
 }
 
 /* Contact Section */
@@ -838,12 +877,12 @@ body {
         text-align: center;
     }
     
-    .testimonial-content {
+    .reviews-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     
-    .testimonial-text {
+    .reviews-header {
         text-align: center;
     }
     
